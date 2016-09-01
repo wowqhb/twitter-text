@@ -1,8 +1,9 @@
 
 package com.twitter;
 
-import java.util.regex.*;
 import junit.framework.TestCase;
+
+import java.util.regex.Pattern;
 
 public class RegexTest extends TestCase {
   public void testAutoLinkHashtags() {
@@ -42,11 +43,11 @@ public class RegexTest extends TestCase {
   }
 
   public void testValidURL() {
-    assertCaptureCount(8, Regex.VALID_URL, "http://example.com");
-    assertCaptureCount(8, Regex.VALID_URL, "http://はじめよう.みんな");
-    assertCaptureCount(8, Regex.VALID_URL, "http://はじめよう.香港");
-    assertCaptureCount(8, Regex.VALID_URL, "http://はじめよう.الجزائر");
-    assertCaptureCount(8, Regex.VALID_URL, "http://test.scot");
+    assertCaptureCount(12, Regex.VALID_URL, "http://example.com");
+    assertCaptureCount(12, Regex.VALID_URL, "http://はじめよう.みんな");
+    assertCaptureCount(12, Regex.VALID_URL, "http://はじめよう.香港");
+    assertCaptureCount(12, Regex.VALID_URL, "http://はじめよう.الجزائر");
+    assertCaptureCount(12, Regex.VALID_URL, "http://test.scot");
   }
 
   public void testValidURLDoesNotCrashOnLongPaths() {
