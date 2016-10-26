@@ -22,6 +22,7 @@ public class Extractor {
     protected String displayURL = null;
     protected String expandedURL = null;
 
+
     public Entity(int start, int end, String value, String listSlug, Type type) {
       this.start = start;
       this.end = end;
